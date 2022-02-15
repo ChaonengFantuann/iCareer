@@ -3,7 +3,7 @@
 		<image class="logo" src="/static/logo.png"></image>
 		<view>
 			<text class="title">{{title}}</text>
-      <u-button type="primary">123</u-button>
+      <u-button type="primary">这是一个测试</u-button>
 		</view>
 	</view>
 </template>

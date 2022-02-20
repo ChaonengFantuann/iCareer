@@ -1,18 +1,17 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-      <u-button type="primary">这是一个测试</u-button>
-		</view>
-	</view>
+	<view>
+    <view class="state_div">
+
+    </view>
+  </view>
 </template>
 
 <script>
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+        name:this.$store.state.user.name
 			}
 		},
 		onLoad() {
@@ -25,26 +24,9 @@
 </script>
 
 <style lang="scss">
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: red;
-	}
+   .state_div{
+     height: $nav-top-height;
+     width: 100%;
+     background-color: red;
+   }
 </style>

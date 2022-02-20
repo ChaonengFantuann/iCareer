@@ -1,4 +1,5 @@
 const state = {
+    name: 'zxz1123'
 }
 const getters = {
 }

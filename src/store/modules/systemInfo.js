@@ -1,9 +1,5 @@
 const state = {
-    name: 'zxz1123',
-    sex:0,
-    age:'',
-    school:'',
-    grade:''
+    system:{}
 }
 const getters = {
 }

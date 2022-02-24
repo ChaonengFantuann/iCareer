@@ -76,7 +76,37 @@ $uni-color-paragraph: #3F536E; // 文章段落颜色
 $uni-font-size-paragraph:30rpx;
 
 //自定义部分
-$nav-top-height:44px;
+$nav-top-height:69rpx;
+@mixin wh($w,$h){
+  width: $w;
+  height: $h;
+  font-family: 黑体, serif;
+}
+@mixin flex-center(){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@mixin flex-between(){
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.public-header-res1{
+  height: $nav-top-height;
+  width: 100%;
+}
+@mixin flex-start(){
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+@mixin flex-list(){
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
 
 
 @import "~uview-ui/theme.scss";

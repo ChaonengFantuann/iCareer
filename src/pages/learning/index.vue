@@ -1,13 +1,86 @@
 <template>
-
+<view class="bodys">
+  <view class="public-header-res1"></view>
+  <view class="learn-body">
+    <view id="users" class="subsection-box">
+      <u-tabs class="testtab" @click="tabClick" @change="tabChange"  lineColor="#45818E" :inactiveStyle="tab.unstyle" :activeStyle="tab.style" :list="list" :current="tab.current"></u-tabs>
+    </view>
+    <view class="swiper-box">
+       <swiper class="swipers" :style="'height:' + system.height + 'px;width:'+ system.width +'px;'" :current="swiper.current" :circular="true" @change="swiperChange" >
+         <swiper-item>
+            <view class="swiper-test">{{ system.height+','+system.width }}</view>
+         </swiper-item>
+         <swiper-item>
+            <view class="swiper-test">B</view>
+         </swiper-item>
+         <swiper-item>
+           <view class="swiper-test">C</view>
+         </swiper-item>
+       </swiper>
+    </view>
+  </view>
+</view>
 </template>
 
 <script>
 export default {
-name: "index.vue"
+    name: "index.vue",
+  mounted() {
+  },
+  data(){
+      return{
+        system:{
+          height: this.$store.state.systemInfo.system.screenHeight-131,
+          width:this.$store.state.systemInfo.system.screenWidth },
+        swiper:{ current:0 },
+        tab:{
+          current:0,
+          style:{ fontSize:'16px', color:"#45818E", weight:'64px',marginRight:'18px',marginLeft:'18px'},
+          unstyle:{ fontSize:'16px' ,weight:'64px',marginRight:'18px',marginLeft:'18px' }
+        },
+        list: [{
+          name: '学习进度',
+        }, {
+          name: '面试真题',
+        }, {
+          name: '自我评估'
+        }]
+      }
+  },
+  methods:{
+    swiperChange(e){
+      this.tab.current = e.detail.current
+    },
+    tabChange(e){
+      this.swiper.current = e.index
+    },
+    tabClick(e){
+      this.swiper.current = e.index
+    }
+  }
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.bodys{
+  @include wh(100%,100%);
+}
+   .learn-body{
+     @include wh(100%,auto);
+     @include flex-center();
+     .subsection-box{
+       @include wh(auto,auto);
+     }
+     .swiper-box{
+       @include wh(auto,auto);
+       .swipers{
+       }
+     }
+   }
+   //下面的CSS是测试代码，生产中给删了
+   .swiper-test{
+     @include wh(100%,100%);
+     @include flex-center();
+     background-color: red;
+   }
 </style>

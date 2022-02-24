@@ -21,7 +21,10 @@
 			"path":"pages/learning/index",
 			"style":{
 				"navigationBarTitleText":"学习",
-				"navigationStyle":"custom"
+				"navigationStyle":"custom",
+				"app-plus":{
+					"scrollIndicator":"none"
+				}
 			}
 		},
 		{
@@ -75,7 +78,7 @@
 	},
 	"tabBar":{
 		"color": "#4A4747",
-		"seletedColor": "#45818E",
+		"selectedColor": "#45818E",
 		"borderStyle":"black",
 		"fontSize":"14px",
 		"height":"52px",
@@ -83,31 +86,31 @@
 			{
                 "pagePath":"pages/index/index",
 			    "iconPath":"static/index.png",
-			    "selectedIconPath":"static/index_color.png",
+			    "selectedIconPath":"static/index-color.png",
 			    "text":"主页"
 			},
 			{
 				"pagePath":"pages/course/index",
 				"iconPath":"static/course.png",
-				"selectedIconPath":"static/course_color.png",
+				"selectedIconPath":"static/course-color.png",
 				"text":"课程"
 			},
 			{
 				"pagePath":"pages/learning/index",
-				"iconPath":"static/learning.png",
-				"selectedIconPath":"static/learning_color.png",
+				"iconPath":"static/learn.png",
+				"selectedIconPath":"static/learn-color.png",
 				"text":"学习"
 			},
 			{
 				"pagePath":"pages/message/index",
 				"iconPath":"static/message.png",
-				"selectedIconPath":"static/message_color.png",
+				"selectedIconPath":"static/message-color.png",
 				"text":"消息"
 			},
 			{
 				"pagePath":"pages/user/index",
 				"iconPath":"static/user.png",
-				"selectedIconPath":"static/user_color.png",
+				"selectedIconPath":"static/user-color.png",
 				"text":"我的"
 			}
 		]

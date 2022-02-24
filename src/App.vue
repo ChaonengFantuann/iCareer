@@ -1,7 +1,13 @@
 <script>
+import store from './store'
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
+      uni.getSystemInfo({
+        success(res){
+          console.log(res)
+          store.state.systemInfo.system = res
+        }
+      })
 		},
 		onShow: function() {
 			console.log('App Show')

@@ -1,19 +1,15 @@
 <template>
-<view>
+  <div>
 
-</view>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "course-item",
-  data(){
-    return{
-
-    }
-  }
+  name: "addResume"
 }
 </script>
 
 <style scoped lang="scss">
+
 </style>

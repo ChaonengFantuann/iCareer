@@ -17,14 +17,13 @@
          <view class="icon" style="margin-left: 12px">
            <u-icon color="#C8C8C8" style="margin-right: 12px" name="bell" size="25"></u-icon>
            <u-icon color="#C8C8C8" style="margin-right: 12px" name="order" size="25"></u-icon>
-           <u-icon color="#C8C8C8" name="reload" size="25"></u-icon>
          </view>
          <view class="icon" style="margin-right: 15px">
-           <u-icon color="#C8C8C8" name="more-dot-fill" size="25"></u-icon>
+           <u-icon color="#C8C8C8" name="reload" size="25"></u-icon>
          </view>
        </view>
       <view class="talk-item-box" :style="'width:'+ system.width +'px;height:'+ system.talkHigh +'px;'">
-        <talk-item ref="items" @click="itemClick"></talk-item>
+        <talk-item v-for="(item,index) in talks" :key="index" :talkContent="item" ref="items" @click="itemClick"></talk-item>
       </view>
     </view>
   </view>
@@ -49,6 +48,28 @@ export default {
          width:this.$store.state.systemInfo.system.screenWidth,
          talkHigh:0
        },
+       talks:[
+         {
+           user:'绿环公司HR-张先生',
+           time:'13:22',
+           content:'您好，您的简历和我们岗位需求很相近，有兴趣了解一下么'
+         },
+         {
+           user:'列数集团人事-李先生',
+           time:'09:22',
+           content:'王同学，我们有份岗位很适合您'
+         },
+         {
+           user:'中国石化-孙女士',
+           time:'刚刚',
+           content:'同学你好，我是中国石化，你想深入了解下运维岗位吗'
+         },
+         {
+           user:'北京化工-秦女士',
+           time:'昨天',
+           content:'同学你好,你想深入了解下化工开发岗位吗'
+         }
+       ]
      }
   },
   methods:{
@@ -111,6 +132,8 @@ export default {
        .talk-item-box{
          @include flex-list();
          overflow: auto;
+         flex-wrap: wrap;
+         align-content: start;
        }
      }
    }

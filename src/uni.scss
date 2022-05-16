@@ -100,12 +100,12 @@ $nav-top-height:69rpx;
 @mixin flex-start(){
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
 }
 @mixin flex-list(){
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 }
 
 

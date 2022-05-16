@@ -13,7 +13,7 @@
             style="height: 60rpx"
             placeholder="请输入手机号"
             border="bottom"
-            v-model="value"
+            v-model="phoneNumber"
             @change="change"
             fontSize="32rpx"
         >
@@ -30,14 +30,14 @@
             style="height: 60rpx;margin-top: 24rpx"
             placeholder="请输入密码"
             border="bottom"
-            v-model="value"
+            v-model="password"
             @change="change"
             fontSize="32rpx"
         >
         </u-input>
       </view>
       <view class="bottons">
-        <u-button  :customStyle="styleBotton"  type="primary" text="登录"></u-button>
+        <u-button @click="logins"  :customStyle="styleBotton"  type="primary" text="登录"></u-button>
       </view>
     </view>
   </view>
@@ -49,6 +49,8 @@ export default {
   data(){
     return{
       value:'',
+      phoneNumber:'',
+      password:'',
       styleBotton:{
         borderRadius:'34rpx',
         backgroundColor:'#45818E',
@@ -66,6 +68,13 @@ export default {
     },
     backPage(){
       uni.navigateBack()
+    },
+    logins(){
+      if(this.phoneNumber === 'sjds1234' && this.password === '1234567'){
+        uni.switchTab({
+          url: '/pages/index/index'
+        });
+      }
     }
   }
 }

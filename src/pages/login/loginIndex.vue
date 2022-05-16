@@ -13,7 +13,7 @@
           style="height: 60rpx"
           placeholder="请输入手机号"
           border="bottom"
-          v-model="value"
+          v-model="login.phone"
           @change="change"
           fontSize="32rpx"
       >
@@ -22,6 +22,7 @@
             slot="prefix"
             margin="0 3px 0 0"
             type="tips"
+            v-model:="login.code"
             size="30rpx"
         >  </u-text>
       </u-input>
@@ -40,7 +41,7 @@
       </u-input>
     </view>
     <view class="bottons">
-      <u-button  :customStyle="styleBotton"  type="primary" text="登录"></u-button>
+      <u-button @click="Tologin"  :customStyle="styleBotton"  type="primary" text="登录"></u-button>
     </view>
   </view>
 </view>
@@ -51,7 +52,10 @@ export default {
 name: "loginIndex.vue",
   data(){
    return{
-     value:'',
+     login:{
+       phone:'',
+       code:''
+     },
      styleBotton:{
        borderRadius:'34rpx',
        backgroundColor:'#45818E',
@@ -71,6 +75,11 @@ name: "loginIndex.vue",
       uni.navigateTo({
         url:'/pages/login/loginPassword'
       })
+    },
+    Tologin(){
+      uni.switchTab({
+        url: '/pages/index/index'
+      });
     }
   }
 }

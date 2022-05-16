@@ -7,14 +7,14 @@
     </view>
     <view class="swiper-box">
        <swiper class="swipers" :style="'height:' + system.height + 'px;width:'+ system.width +'px;'" :current="swiper.current" :circular="true" @change="swiperChange" >
-         <swiper-item>
-            <view class="swiper-test">{{ system.height+','+system.width }}</view>
+         <swiper-item >
+            <Progress :system="system"/>
          </swiper-item>
          <swiper-item>
-            <view class="swiper-test">B</view>
+           <FaceTurn :system="system"/>
          </swiper-item>
          <swiper-item>
-           <view class="swiper-test">C</view>
+           <MyTest :system="system"/>
          </swiper-item>
        </swiper>
     </view>
@@ -23,15 +23,23 @@
 </template>
 
 <script>
+import Progress from "@/pages/learning/components/progress.vue";
+import FaceTurn from "@/pages/learning/components/FaceTurn";
+import MyTest from "@/pages/learning/components/MyTest";
 export default {
     name: "index.vue",
   mounted() {
   },
+  components:{
+      Progress, FaceTurn, MyTest
+  },
   data(){
       return{
         system:{
-          height: this.$store.state.systemInfo.system.screenHeight-131,
-          width:this.$store.state.systemInfo.system.screenWidth },
+          height: this.$store.state.systemInfo.system.screenHeight-137,
+          width:this.$store.state.systemInfo.system.screenWidth,
+          listHeight:this.$store.state.systemInfo.system.screenHeight-(231+137)
+        },
         swiper:{ current:0 },
         tab:{
           current:0,
@@ -68,6 +76,7 @@ export default {
    .learn-body{
      @include wh(100%,auto);
      @include flex-center();
+     overflow: hidden;
      .subsection-box{
        @include wh(auto,auto);
      }
@@ -80,7 +89,9 @@ export default {
    //下面的CSS是测试代码，生产中给删了
    .swiper-test{
      @include wh(100%,100%);
-     @include flex-center();
-     background-color: red;
+   }
+   .swiper-test1{
+     @include wh(100%,100%);
+     background-color: rgba(229, 229, 229, 100);
    }
 </style>

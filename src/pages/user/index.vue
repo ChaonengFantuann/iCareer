@@ -12,7 +12,7 @@
         <view class="text-down">
           <view class="text-class">学历:本科</view>
           <view class="icon-user">
-            <u-icon size="17" name="arrow-right"/>
+            <u-icon @click="toInformation" size="17" name="arrow-right"/>
           </view>
         </view>
       </view>
@@ -30,7 +30,7 @@
         </view>
         <view class="item-text">能力</view>
       </view>
-      <view class="items">
+      <view @click="toResume" class="items">
         <view class="item-icon">
           <image style="width: 60rpx;height: 73rpx;" src="../../static/edit.png" mode=""></image>
         </view>
@@ -38,14 +38,14 @@
       </view>
       <view class="items">
         <view class="item-icon">
-          <image style="width: 60rpx;height: 73rpx;" src="../../static/edit.png" mode=""></image>
+          <image style="width: 73rpx;height: 73rpx;" src="../../static/company.png" mode=""></image>
         </view>
         <view class="item-text">企业</view>
       </view>
     </view>
     <view class="cell-list">
       <u-cell-group>
-        <u-cell @click="cellClick" titleStyle="font-size:29rpx;" icon="setting-fill" title="个人设置" :isLink="true"></u-cell>
+        <u-cell  url="/pages/user/setting" @click="cellClick" titleStyle="font-size:29rpx;" icon="setting-fill" title="个人设置" :isLink="true"/>
         <u-cell titleStyle="font-size:29rpx;" icon="integral-fill" :clickable="true" title="会员等级" value="新版本"></u-cell>
       </u-cell-group>
     </view>
@@ -72,6 +72,16 @@ export default {
   methods:{
     cellClick(e){
       console.log(e)
+    },
+    toInformation(){
+      uni.navigateTo({
+        url:'/pages/user/setting'
+      })
+    },
+    toResume(){
+      uni.navigateTo({
+        url:'/pages/resume/resumeShow'
+      })
     }
   }
 }
